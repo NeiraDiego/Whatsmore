@@ -50,11 +50,19 @@
 			right: { value: 5, num: 1, mode: "Incorrect_Dice" }
 		},
 		{
-			title: "Listo para comenzar",
+			title: "Sobre el Experimento",
 			body: [
-				"Ahora ya estás listo para pasar al experimento.",
-				"Tus resultados serán mostrados de forma anónima: se informará que participaste, pero no cuáles resultados corresponden a tu intento."
+				"El experimento debe durar entre 10 y 15 minutos, y debe usarse la opción de las flechas para marcar la respuesta (no el mouse).",
+				"La idea es medir el tiempo de reacción entre que se muestran los dados y lo eliges.",
+				"Debes tratar de elegir la respuesta correcta pero si fallas en alguno no es problema.",
+				"En el cambio de un modo a otro puedes descansar si lo necesitas.",
+				"Los resultados se mostraran de forma anonima, se reportara quienes participaron pero no a quien corresponde cada resultado.",
+				"Advertencia: si ves un cuadrado blanco alrededor de uno de los dados debes hacer click fuera de los dados ya que si no se marcara como error."
 			]
+		},
+		{
+			title: "Listo para comenzar",
+			body: ["Ahora ya estás listo para pasar al experimento."]
 		}
 	];
 
@@ -62,7 +70,7 @@
 	let wrong = $state(false);
 	let screen = $derived(screens[i]);
 	let correctSide = $derived(screen.left && screen.right ? (screen.left.value >= screen.right.value ? "left" : "right") : null);
-	let summary = $derived("A continuación te mostraremos " + (params.numberOfSeries || 7) + " series de " + ((params.repetitionsPerVersion || 20) * 3) + " dados (" + (params.repetitionsPerVersion || 20) + " sin número y " + ((params.repetitionsPerVersion || 20) * 2) + " con números).");
+	let summary = $derived("A continuación te mostraremos " + (params.numberOfSeries || 7) + " series de " + ((params.repetitionsPerVersion || 20) * 3) + " dados (" + (params.repetitionsPerVersion || 20) + " sin número, " + (params.repetitionsPerVersion || 20) + " con el número de puntos y " + (params.repetitionsPerVersion || 20) + " con cualquier número).");
 
 	function trySelect(/** @type {"left" | "right"} */ side) {
 		if (!screen.left || !screen.right) return;
