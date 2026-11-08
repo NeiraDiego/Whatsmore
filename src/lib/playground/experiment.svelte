@@ -126,7 +126,7 @@
 		const response_time = Date.now() - log.time_last_display;
 		const variant = currentVariant();
 		const labels = "[" + left.num + ", " + right.num + "]";
-		enterInCSVLog(log.test_number + ", " + variant + ", " + params.learner + ", " + params.teacher + ", " + left.value + ", " + right.value + ", " + chosen + ", " + correct + ", " + dateInOrgmodeFormat() + ", " + response_time + ", " + (seriesIndex + 1) + ", " + (variantIndex + 1) + ", " + (trialIndex + 1) + ", Labels " + labels);
+		enterInCSVLog(log.test_number + ", " + variant + ", " + params.learner + ", " + params.teacher + ", " + left.value + ", " + right.value + ", " + chosen + ", " + correct + ", " + dateInOrgmodeFormat() + ", " + response_time + ", " + (seriesIndex + 1) + ", " + (variantIndex + 1) + ", " + (trialIndex + 1) + ", \"Labels " + labels + "\"");
 		if (correct) {
 			nbCorrect++;
 			exerciseResult = params.visualFeedback ? params.visualFeedbackCorrect : "";

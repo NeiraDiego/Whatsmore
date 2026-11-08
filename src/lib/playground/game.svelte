@@ -53,7 +53,7 @@ function select(/** @type {number} */ c){
     var	d = new Date();
   	var response_time = Date.now()-log.time_last_display;
 		//   csv_diary: ["Test no, Test Name, Learner, Trainer, C_0, C_1, Value selected , Correction , Date, Answering Time, Series, Variant, Trial, Labels"],
-		enterInCSVLog(log.test_number+", "+params.mode+", "+params.learner+", "+params.teacher+", "+choices+", "+c+","+correct+", "+dateInOrgmodeFormat()+", "+response_time+", , , Labels ["+labels.join(", ")+"]");
+		enterInCSVLog(log.test_number+", "+params.mode+", "+params.learner+", "+params.teacher+", "+choices+", "+c+","+correct+", "+dateInOrgmodeFormat()+", "+response_time+", , , \"Labels ["+labels.join(", ")+"]\"");
 		if(correct == true) {
 				nbCorrect++;
 		    if(params.visualFeedback){exerciseResult=params.visualFeedbackCorrect}
